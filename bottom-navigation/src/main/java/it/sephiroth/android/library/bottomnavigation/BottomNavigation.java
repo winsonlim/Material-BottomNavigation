@@ -484,7 +484,8 @@ public class BottomNavigation extends FrameLayout implements OnItemClickListener
         final boolean tablet = isTablet(gravity);
         final int elevation = getResources().getDimensionPixelSize(!tablet ? R.dimen.bbn_elevation : R.dimen.bbn_elevation_tablet);
         final int bgResId = !tablet ? R.drawable.bbn_background
-                : (MiscUtils.isGravityRight(gravity) ? R.drawable.bbn_background_tablet_right : R.drawable.bbn_background_tablet_left);
+                : (MiscUtils.isGravityRight(gravity)
+                ? R.drawable.bbn_background_tablet_right : R.drawable.bbn_background_tablet_left);
         final int paddingBottom = !tablet ? shadowHeight : 0;
 
         // View elevation
