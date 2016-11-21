@@ -5,6 +5,6 @@
         android:left="0dp" />
     <item
         android:id="@+id/bbn_background"
-        android:drawable="@android:color/background_light"
+        android:drawable="@android:color/transparent"
         android:left="0.5dp" />
 </layer-list>
