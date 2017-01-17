@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- default BottomNavigation height -->
-    <dimen name="bbn_bottom_navigation_height">56dp</dimen>
+    <dimen name="bbn_bottom_navigation_height">52dp</dimen>
 
     <!-- default BottomNavigation width (for tablets) -->
     <dimen name="bbn_bottom_navigation_width">72dp</dimen>
@@ -29,8 +29,8 @@
     <!-- fixed item dimensions -->
     <dimen name="bbn_fixed_maxActiveItemWidth">168dp</dimen>
     <dimen name="bbn_fixed_minActiveItemWidth">104dp</dimen>
-    <dimen name="bbn_fixed_item_padding_top_active">6dp</dimen>
-    <dimen name="bbn_fixed_item_padding_top_inactive">6dp</dimen>
+    <dimen name="bbn_fixed_item_padding_top_active">4dp</dimen>
+    <dimen name="bbn_fixed_item_padding_top_inactive">4dp</dimen>
     <dimen name="bbn_fixed_item_padding_bottom">6dp</dimen>
     <dimen name="bbn_fixed_item_padding_horizontal">12dp</dimen>
     <dimen name="bbn_fixed_text_size_inactive">10dp</dimen>
