@@ -38,7 +38,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
     private final int paddingHorizontal;
     private final int textSizeInactive;
 
-    private static final float TEXT_SCALE_ACTIVE = 1.1666666667f;
+    private static final float TEXT_SCALE_ACTIVE = 1.0f;//1.1666666667f;
     private float canvasTextScale;
     private float iconTranslation;
     private int textCenterX;
