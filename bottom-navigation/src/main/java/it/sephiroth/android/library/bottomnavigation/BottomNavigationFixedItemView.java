@@ -20,7 +20,7 @@ import proguard.annotation.Keep;
  * Created by alessandro on 4/3/16 at 10:55 PM.
  * Project: MaterialBottomNavigation
  */
-@SuppressLint ("ViewConstructor")
+@SuppressLint("ViewConstructor")
 public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstract {
     private static final String TAG = BottomNavigationFixedItemView.class.getSimpleName();
     private final int iconSize;
@@ -38,7 +38,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
     private final int paddingHorizontal;
     private final int textSizeInactive;
 
-    private static final float TEXT_SCALE_ACTIVE = 1.0f;//1.1666666667f;
+    private static final float TEXT_SCALE_ACTIVE = 1.1666666667f;
     private float canvasTextScale;
     private float iconTranslation;
     private int textCenterX;
@@ -63,7 +63,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
         this.colorInactive = menu.getColorInactive();
         this.colorDisabled = menu.getColorDisabled();
         this.centerY = paddingTopActive;
-        this.canvasTextScale = expanded ? TEXT_SCALE_ACTIVE : 1f;
+        this.canvasTextScale = 1f;
         this.iconTranslation = expanded ? 0 : (paddingTopInactive - paddingTopActive);
 
         this.textPaint.setColor(Color.WHITE);
@@ -98,7 +98,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
         set.setDuration(animationDuration);
         set.setInterpolator(interpolator);
 
-        final ValueAnimator animator1 = ObjectAnimator.ofFloat(this, "textScale", expanded ? TEXT_SCALE_ACTIVE : 1);
+        final ValueAnimator animator1 = ObjectAnimator.ofFloat(this, "textScale", 1);
 
         animator1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -109,7 +109,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
         });
 
         final ValueAnimator animator2 =
-            ObjectAnimator.ofFloat(this, "iconTranslation", expanded ? 0 : (paddingTopInactive - paddingTopActive));
+                ObjectAnimator.ofFloat(this, "iconTranslation", expanded ? 0 : (paddingTopInactive - paddingTopActive));
 
         set.playTogether(animator1, animator2);
         set.start();
@@ -135,7 +135,7 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
             this.icon = getItem().getIcon(getContext()).mutate();
 
             final int color =
-                isExpanded() ? (isEnabled() ? colorActive : colorDisabled) : (isEnabled() ? colorInactive : colorDisabled);
+                    isExpanded() ? (isEnabled() ? colorActive : colorDisabled) : (isEnabled() ? colorInactive : colorDisabled);
 
             this.icon.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
             this.icon.setBounds(0, 0, iconSize, iconSize);
@@ -179,51 +179,51 @@ public class BottomNavigationFixedItemView extends BottomNavigationItemViewAbstr
         canvas.scale(canvasTextScale, canvasTextScale, textCenterX, textCenterY);
 
         canvas.drawText(
-            getItem().getTitle(),
-            textX,
-            textY,
-            textPaint
+                getItem().getTitle(),
+                textX,
+                textY,
+                textPaint
         );
 
         canvas.restore();
 
     }
 
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     @Keep
     public int getCenterY() {
         return centerY;
     }
 
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     @Keep
     public void setCenterY(int value) {
         centerY = value;
         ViewCompat.postInvalidateOnAnimation(this);
     }
 
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     @Keep
     public void setTextScale(final float value) {
         canvasTextScale = value;
         ViewCompat.postInvalidateOnAnimation(this);
     }
 
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     @Keep
     public float getTextScale() {
         return canvasTextScale;
     }
 
     @Keep
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     public void setIconTranslation(final float iconTranslation) {
         this.iconTranslation = iconTranslation;
         ViewCompat.postInvalidateOnAnimation(this);
     }
 
     @Keep
-    @SuppressWarnings ("unused")
+    @SuppressWarnings("unused")
     public float getIconTranslation() {
         return iconTranslation;
     }
